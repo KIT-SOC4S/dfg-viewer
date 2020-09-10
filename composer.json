@@ -1,7 +1,12 @@
 {
-  "name": "slub/dfgviewer",
+  "repositories": [
+    { "type": "vcs", "url": "/home/max/dfg_repos/kitodo-presentation" }
+  ],
+  "name": "kit/dfgviewer",
   "type": "typo3-cms-extension",
   "description": "Remote resources navigator for digital libraries. Reads METS/MODS and METS/TEI via OAI-PMH.",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "homepage": "https://github.com/slub/dfg-viewer",
   "keywords": [
     "TYPO3",
@@ -38,7 +43,7 @@
   "license": "GPL-3.0-or-later",
   "require": {
     "typo3/cms-core": "~9.5.20",
-    "kitodo/presentation": "~3.1.2",
+    "kitodo/presentation": "dev-master",
     "slub/slub-digitalcollections": "~1.1.0"
   },
   "autoload": {
