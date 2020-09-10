@@ -5,7 +5,6 @@
   "name": "kit/dfgviewer",
   "type": "typo3-cms-extension",
   "description": "Remote resources navigator for digital libraries. Reads METS/MODS and METS/TEI via OAI-PMH.",
-  "minimum-stability": "dev",
   "homepage": "https://github.com/slub/dfg-viewer",
   "keywords": [
     "TYPO3",
