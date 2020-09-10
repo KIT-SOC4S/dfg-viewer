@@ -1,0 +1,56 @@
+{
+  "name": "kitodo/presentation",
+  "description": "Base plugins, modules, services and API of the Digital Library Framework. It is part of the community-based Kitodo Digitization Suite.",
+  "type": "typo3-cms-extension",
+  "homepage": "https://www.kitodo.org",
+  "readme": "README.md",
+  "license": ["GPL-3.0-or-later"],
+  "authors": [
+    {
+      "name": "Kitodo. Key to digital objects e.V.",
+      "email": "contact@kitodo.org",
+      "homepage": "https://www.kitodo.org",
+      "role": "provider"
+    },
+    {
+      "name": "Sebastian Meyer",
+      "email": "sebastian.meyer@slub-dresden.de",
+      "homepage": "https://www.slub-dresden.de",
+      "role": "maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/kitodo/kitodo-presentation/issues",
+    "source": "https://github.com/kitodo/kitodo-presentation",
+    "docs": "https://docs.typo3.org/p/kitodo/presentation/master/en-us/"
+  },
+  "require": {
+    "php": "^7.3|^7.4",
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "ext-json": "*",
+    "ext-libxml": "*",
+    "ext-openssl": "*",
+    "ext-simplexml": "*",
+    "typo3/cms-core": "~8.7.32|~9.5.17",
+    "typo3/cms-tstemplate": "~8.7.32|~9.5.17",
+    "ubl/php-iiif-prezi-reader": "0.3.0",
+    "solarium/solarium": "^4.2"
+  },
+  "replace": {
+    "typo3-ter/dlf": "self.version"
+  },
+  "suggest": {
+    "devlog/devlog": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kitodo\\Dlf\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "dlf"
+    }
+  }
+}
