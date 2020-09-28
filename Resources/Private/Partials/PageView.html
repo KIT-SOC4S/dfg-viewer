@@ -158,25 +158,27 @@
               </f:else>
             </f:if>
           </li>
-          <f:if condition="{dc:xpath(xpath:'(//mets:fileSec/mets:fileGrp[@USE=\'FULLTEXT\']/mets:file[1]/mets:FLocat/@xlink:href)[1]')}">
             <li class="fulltext">
               <f:if condition="{gp-double} == 1">
                 <f:then>
-                  <span class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key:'fulltext.no_fulltext_double', extensionName:'dfgviewer')}"><f:translate key='fulltext.no_fulltext_double' extensionName='dfgviewer' /></span>
+		  <span class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key:'fulltext.no_fulltext_double', extensionName:'dfgviewer')}"><f:translate key='fulltext.no_fulltext_double' extensionName='dfgviewer' /></span>
                 </f:then>
-                <f:else>
-                  <f:if condition="{gp-pagegrid} == 1">
-                    <f:then>
-                      <span class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key:'fulltext.no_fulltext_gridpage', extensionName:'dfgviewer')}"><f:translate key='fulltext.no_fulltext_gridpage' extensionName='dfgviewer' /></span>
-                    </f:then>
-                    <f:else>
-                      <f:cObject typoscriptObjectPath="plugin.tx_dlf_fulltexttool" />
-                    </f:else>
-                  </f:if>
-                </f:else>
-              </f:if>
-            </li>
-          </f:if>
+		<f:else>
+		  <f:if condition="{gp-pagegrid} == 1">
+		    <f:then>
+		      <span class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key:'fulltext.no_fulltext_gridpage', extensionName:'dfgviewer')}"><f:translate key='fulltext.no_fulltext_gridpage' extensionName='dfgviewer' /></span>
+		    </f:then>
+		    <f:else>
+		      <f:cObject typoscriptObjectPath="plugin.tx_dlf_fulltexttool" />
+		    </f:else>
+		  </f:if>
+		</f:else>
+	      </f:if>
+	    </li>
+	    <li class ="create_fulltext">
+	      <f:link.page pageUid="{kitodoPageView}" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}', create:'1'}}" class="" style="background-color:#ff0000" title="create">Create</f:link.page>
+
+	    </li>
           <li class="grid">
             <f:if condition="{dc:xpath(xpath:'(//mets:fileSec/mets:fileGrp[@USE=\'THUMBS\']/mets:file[1]/mets:FLocat/@xlink:href)[1]')}">
               <f:then>
