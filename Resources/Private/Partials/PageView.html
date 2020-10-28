@@ -175,12 +175,11 @@
 		</f:else>
 	      </f:if>
 	    </li>
-	    <li class ="create_fulltext">
-	      <f:link.page pageUid="{kitodoPageView}" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}', create:'1'}}" class="" style="background:#ff0000" title="create">Create</f:link.page>
-        <!--f:form action="{kitodoPageView}" additionalParams="{tx_dlf:{page:'{gp-page}', double:'0', id:'{gp-id}', pagegrid:'0'}}" style="background:#ff0000">
-          <f:form.hidden name="create" value="1"/>
-          <f:form.submit value="create"/>
-        </f:form-->
+	    <li class="create_form">
+	      <f:form pageUid="{kitodoPageView}" action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}">
+		<f:form.hidden property="create" value="one"/>
+		<f:form.submit value="create"/>
+	      </f:form>
 	    </li>
           <li class="grid">
             <f:if condition="{dc:xpath(xpath:'(//mets:fileSec/mets:fileGrp[@USE=\'THUMBS\']/mets:file[1]/mets:FLocat/@xlink:href)[1]')}">
