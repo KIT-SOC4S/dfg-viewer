@@ -5,8 +5,8 @@
       lang="en">
 
 <f:section name="PageView">
-
-  <div class="document-view">
+<div class="document-view">
+  {f:cache.disable()}
     <f:if condition="{gp-pagegrid} == 1">
       <f:then>
         <f:cObject typoscriptObjectPath="plugin.tx_dlf_pagegrid" />
@@ -159,6 +159,31 @@
               </f:else>
             </f:if>
           </li>
+<style>
+.ocr-page, .ocr-book{
+  border: 0px;
+  border-radius: 20px;
+  width: 40px;
+  height:40px;
+  background: #fff url("typo3conf/ext/dfgviewer/Resources/Public/Images/PageOCR3.svg") no-repeat 0 0;
+  background-position: 0 0;
+  cursor:pointer;
+  transition: all .18s ease-in-out;
+  position: relative;
+  padding: 0;
+  margin: 0 4px;
+  display: inline-block;
+}
+.ocr-page:hover, .ocr-book:hover {
+  cursor:pointer;
+  transform:scale(1.2);
+  transition: all .18s ease-in-out;
+}
+
+.ocr-book {
+  background:#0f0;
+}
+</style>
             <li class="fulltext">
               <f:if condition="{gp-double} == 1">
                 <f:then>
@@ -177,21 +202,19 @@
 	      </f:if>
 	    </li>
 	    <li class="create_form">
-	      <!--<a id="tx-dlf-fulltexttool-create" style="background-color:#a0a0a0" onclick="document.getElementById('create-form').submit();return false;">Create fulltext</a>-->
 	      <f:form id="tx-dlf-fulltexttool-create" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
 
 		<f:form.hidden property="create" value="1"/>
 		<f:form.hidden property="type" value="page"/>
-		<f:form.submit value="page" style="border-radius:25px;width:50px;height:50px;"/>
+		<f:form.submit class="ocr-page" />
 	      </f:form>
 	    </li>
 	    <li class="create_form">
-	      <!--<a id="tx-dlf-fulltexttool-create" style="background-color:#a0a0a0" onclick="document.getElementById('create-form').submit();return false;">Create fulltext</a>-->
 	      <f:form id="tx-dlf-fulltexttool-create" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
 
 		<f:form.hidden property="create" value="1"/>
 		<f:form.hidden property="type" value="book"/>
-		<f:form.submit value="book" style="border-radius:25px;width:50px;height:50px;"/>
+		<f:form.submit class="ocr-book"/>
 	      </f:form>
 	    </li>
 
@@ -263,13 +286,18 @@
   overflow: auto; /* Enable scroll if needed */
 }
 
+.modal-inner {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  padding: 5px;
+  margin: auto;
+  width: 80%;
+}
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  line-height: 1.3em;
 }
 
 /* The Close Button */
@@ -288,10 +316,12 @@
 }
 </style>
 <div class="modal" id="tx-dlf-fulltext-refresh-modal">
+  <div class="modal-inner">
+    <span class="close">&times;</span>
     <div class="modal-content">
-	<span class="close">&times;</span>
-	<p>Please try again in 5 seconds</p>
+      <p>OCR is being prepared,<br/> please try again a bit later</p>
     </div>
+  </div>
 </div>
 
 <script>
