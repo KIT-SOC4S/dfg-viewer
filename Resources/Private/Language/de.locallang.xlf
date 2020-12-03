@@ -45,6 +45,18 @@
 				<source><![CDATA[No fulltext in gridpage mode.]]></source>
 				<target><![CDATA[Keine Volltexte in der Vorschau-Ansicht.]]></target>
 			</trans-unit>
+			<trans-unit id="fulltext.create_ocr_page" approved="yes">
+				<source><![CDATA[Create OCR for current page]]></source>
+				<target><![CDATA[OCR für aktuelle Seite erstellen]]></target>
+			</trans-unit>
+			<trans-unit id="fulltext.create_ocr_book" approved="yes">
+				<source><![CDATA[Create OCR for the book]]></source>
+				<target><![CDATA[OCR für ganzes Buch erstellen]]></target>
+			</trans-unit>
+			<trans-unit id="fulltext.ocr_in_progress" approved="yes">
+				<source><![CDATA[OCR is being prepared,<x ctype="x-html-br"/> please try again a bit later]]></source>
+				<target><![CDATA[OCR wird erzeugt, <x ctype="x-html-br"/> bitte versuchen Sie es später noch einmal]]></target>
+			</trans-unit>
 			<trans-unit id="gridpage.preview" approved="yes">
 				<source><![CDATA[Thumbnail Preview]]></source>
 				<target><![CDATA[Vorschaubilder]]></target>
