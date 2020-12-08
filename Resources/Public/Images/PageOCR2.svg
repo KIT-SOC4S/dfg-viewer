@@ -11,7 +11,7 @@
 <path d="M31.8167 27.0481V32H26.6399" stroke="#6887A3" stroke-width="1.5"/>
 <path d="M31.8167 12.9519V8H26.6399" stroke="#6887A3" stroke-width="1.5"/>
 <path d="M32 23.616H30.795H8" stroke="#6887A3"/>
-<rect x="22.85" y="25.1" width="1.8" height="4.8" stroke="#6887A3" stroke-width="0.2"/>
-<rect x="17.8" y="25.1" width="1.8" height="4.8" stroke="#6887A3" stroke-width="0.2"/>
+<path d="M18.7586 24.7587L18.7586 30.0909" stroke="#6887A3" stroke-width="2" stroke-miterlimit="16" stroke-dasharray="1 0"/>
+<path d="M23.7241 24.7587L23.7241 30.0909" stroke="#6887A3" stroke-width="2" stroke-miterlimit="16" stroke-dasharray="1 0"/>
 </g>
 </svg>

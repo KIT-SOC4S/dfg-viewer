@@ -158,41 +158,6 @@
               </f:else>
             </f:if>
           </li>
-<style>
-.ocr-page, .ocr-book{
-  border: 0px;
-  border-radius: 20px;
-  width: 40px;
-  height:40px;
-  cursor:pointer;
-  transition: all .18s ease-in-out;
-  position: relative;
-  padding: 0;
-  margin: 0 4px;
-  display: inline-block;
-}
-
-.ocr-page {
-  background: #fff url("typo3conf/ext/dfgviewer/Resources/Public/Images/PageOCR.svg") no-repeat 0 0 !important;
-  background-position: 0 0;
-}
-
-.ocr-page:hover, .ocr-book:hover {
-  cursor:pointer;
-  transform:scale(1.2);
-  transition: all .18s ease-in-out;
-}
-
-.ocr-book {
-  background: #fff url("typo3conf/ext/dfgviewer/Resources/Public/Images/BookOCR.svg") no-repeat 0 0 !important;
-  background-position: 0 0;
-}
-
-
-.ocr-create input {
-  display:none;
-}
-</style>
             <li class="fulltext">
               <f:if condition="{gp-double} == 1">
                 <f:then>
@@ -228,7 +193,7 @@
             </f:if>
           </li>
 	    <f:if condition="{gp-pagegrid} == 0 and {gp-double} == 0">
-	    <li class="ocr-create" id="tx-dlf-create-form">
+	    <li class="ocr-page ocr-create" id="tx-dlf-create-form">
 	      <a class="ocr-page" onclick="document.getElementById('tx-dlf-fulltext-create-page').submit()">
 		<!--Create Page OCR-->
 		<f:translate key='fulltext.create_ocr_page' extensionName='dfgviewer'/>
@@ -239,7 +204,7 @@
 		</f:form>
 	      </a>
 	    </li>
-	    <li class="ocr-create" id="tx-dlf-create-form">
+	    <li class="ocr-book ocr-create" id="tx-dlf-create-form">
 	      <a class="ocr-book" onclick="document.getElementById('tx-dlf-fulltext-create-book').submit()">
 		<!--Create Book OCR-->
 		<f:translate key='fulltext.create_ocr_book' extensionName='dfgviewer'/>
@@ -287,7 +252,39 @@
         </f:else>
       </f:if>
     </div>
-
+<div class="ocr-modal" id="tx-dlf-fulltext-refresh-modal">
+  <div class="ocr-modal-inner">
+    <span class="ocr-modal-close" id="tx-dlf-fulltext-refresh-close">&times;</span>
+    <div class="ocr-modal-content">
+      <p>OCR is being prepared, please try again a bit later</p>
+    </div>
   </div>
+</div>
+<script>
+
+    // Modal element
+    var modal = document.getElementById("tx-dlf-fulltext-refresh-modal");
+
+    // Get the button that opens the modal
+    //var btn = document.getElementById("myBtn");
+
+    // 'Close' element
+    var span = document.getElementsByClassName("ocr-modal-close")[0];
+
+
+    // Close the modal
+    span.onclick = function() {
+      $("#tx-dlf-fulltext-refresh-modal").hide();
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+	$("#tx-dlf-fulltext-refresh-modal").hide();
+      }
+    }
+
+  </script>
+ </div>
 </f:section>
 </html>
