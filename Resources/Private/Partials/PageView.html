@@ -158,41 +158,6 @@
               </f:else>
             </f:if>
           </li>
-<style>
-.ocr-page, .ocr-book{
-  border: 0px;
-  border-radius: 20px;
-  width: 40px;
-  height:40px;
-  cursor:pointer;
-  transition: all .18s ease-in-out;
-  position: relative;
-  padding: 0;
-  margin: 0 4px;
-  display: inline-block;
-}
-
-.ocr-page {
-  background: #fff url("typo3conf/ext/dfgviewer/Resources/Public/Images/PageOCR.svg") no-repeat 0 0 !important;
-  background-position: 0 0;
-}
-
-.ocr-page:hover, .ocr-book:hover {
-  cursor:pointer;
-  transform:scale(1.2);
-  transition: all .18s ease-in-out;
-}
-
-.ocr-book {
-  background: #fff url("typo3conf/ext/dfgviewer/Resources/Public/Images/BookOCR.svg") no-repeat 0 0 !important;
-  background-position: 0 0;
-}
-
-
-.ocr-create input {
-  display:none;
-}
-</style>
             <li class="fulltext">
               <f:if condition="{gp-double} == 1">
                 <f:then>
@@ -228,27 +193,24 @@
             </f:if>
           </li>
 	    <f:if condition="{gp-pagegrid} == 0 and {gp-double} == 0">
-	    <li class="ocr-create" id="tx-dlf-create-form">
-	      <a class="ocr-page" onclick="document.getElementById('tx-dlf-fulltext-create-page').submit()">
+	    <li class="ocr-create ocr-page" id="tx-dlf-create-form">
+	      <f:cObject typoscriptObjectPath="plugin.tx_dlf_fulltextgeneratortool" />
+	      <!--<a onclick="document.getElementById('tx-dlf-fulltext-create-page').submit()">test</a>-->
 		<!--Create Page OCR-->
 		<f:translate key='fulltext.create_ocr_page' extensionName='dfgviewer'/>
-		<f:form id="tx-dlf-fulltext-create-page" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
+		<f:form style="display:none;" id="tx-dlf-fulltext-create-page" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
 		  <f:form.hidden property="create" value="1"/>
 		  <f:form.hidden property="type" value="page"/>
 		  <f:form.submit/>
 		</f:form>
-	      </a>
-	    </li>
-	    <li class="ocr-create" id="tx-dlf-create-form">
-	      <a class="ocr-book" onclick="document.getElementById('tx-dlf-fulltext-create-book').submit()">
+	      <!--<a onclick="document.getElementById('tx-dlf-fulltext-create-book').submit()">test</a>-->
 		<!--Create Book OCR-->
 		<f:translate key='fulltext.create_ocr_book' extensionName='dfgviewer'/>
-		<f:form id="tx-dlf-fulltext-create-book" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
+		<f:form style="display:none;" id="tx-dlf-fulltext-create-book" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
 		  <f:form.hidden property="create" value="1"/>
 		  <f:form.hidden property="type" value="book"/>
 		  <f:form.submit/>
 		</f:form>
-	      </a>
 	    </li>
 	  </f:if>
           <f:if condition="{dc:xpath(xpath:'//mets:amdSec/mets:digiprovMD/mets:mdWrap[@OTHERMDTYPE=\'DVLINKS\']/mets:xmlData/dv:links/dv:sru')}">

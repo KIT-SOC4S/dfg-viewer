@@ -228,6 +228,32 @@
                     }
                 }
             }
+	    &.ocr-create {
+	      > a {
+		border: 0px;
+		border-radius: 20px;
+		width: 40px;
+		height:40px;
+		cursor:pointer;
+		transition: all .18s ease-in-out;
+	      }
+	      > a:hover {
+		cursor:pointer;
+		transform:scale(1.2);
+		transition: all .18s ease-in-out;
+	      }
+	      input {
+		display:none;
+	      }
+	    }
+	    .ocr-page {
+	      background: #fff url("../Images/PageOCR.svg") no-repeat 0 0 !important;
+	      background-position: 0 0;
+	    }
+	    .ocr-book {
+	      background: #fff url("../Images/BookOCR.svg") no-repeat 0 0 !important;
+	      background-position: 0 0;
+	    }
             &.grid {
                 > a, > span {
                     background-position: -160px 0;

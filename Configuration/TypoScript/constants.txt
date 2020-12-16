@@ -48,6 +48,9 @@ config {
   # cat=plugin.tx_dfgviewer/file; type=string; label=Fulltext Tool template file
   templateFileToolFulltext = EXT:dfgviewer/Resources/Private/Templates/Plugins/Kitodo/FulltextTool.tmpl
 
+  # cat=plugin.tx_dfgviewer/file; type=string; label=Fulltext Generator Tool template file
+  templateFileToolFulltextGenerator = EXT:dfgviewer/Resources/Private/Templates/Plugins/Kitodo/FulltextGeneratorTool.tmpl
+
   # cat=plugin.tx_dfgviewer/file; type=string; label=Image manipulation template file
   templateFileToolImageManipulation = EXT:dfgviewer/Resources/Private/Templates/Plugins/Kitodo/ImageManipulationTool.tmpl
 

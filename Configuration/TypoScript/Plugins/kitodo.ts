@@ -131,6 +131,11 @@ plugin.tx_dlf_fulltexttool {
   pages = {$config.storagePid}
 }
 
+plugin.tx_dlf_fulltextgeneratortool {
+  templateFile = {$config.templateFileToolFulltextGenerator}
+  pages = {$config.storagePid}
+}
+
 plugin.tx_dlf_imagemanipulationtool {
   templateFile = {$config.templateFileToolImageManipulation}
 }
