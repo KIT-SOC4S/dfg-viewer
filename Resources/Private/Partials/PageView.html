@@ -228,8 +228,8 @@
             </f:if>
           </li>
 	    <f:if condition="{gp-pagegrid} == 0 and {gp-double} == 0">
-	    <li class="ocr-create" id="tx-dlf-create-form">
-	      <a class="ocr-page" onclick="document.getElementById('tx-dlf-fulltext-create-page').submit()">
+	    <li class="ocr-page ocr-create" id="tx-dlf-create-form">
+	      <a onclick="document.getElementById('tx-dlf-fulltext-create-page').submit()">
 		<!--Create Page OCR-->
 		<f:translate key='fulltext.create_ocr_page' extensionName='dfgviewer'/>
 		<f:form id="tx-dlf-fulltext-create-page" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
@@ -239,8 +239,8 @@
 		</f:form>
 	      </a>
 	    </li>
-	    <li class="ocr-create" id="tx-dlf-create-form">
-	      <a class="ocr-book" onclick="document.getElementById('tx-dlf-fulltext-create-book').submit()">
+	    <li class="ocr-book ocr-create" id="tx-dlf-create-form">
+	      <a onclick="document.getElementById('tx-dlf-fulltext-create-book').submit()">
 		<!--Create Book OCR-->
 		<f:translate key='fulltext.create_ocr_book' extensionName='dfgviewer'/>
 		<f:form id="tx-dlf-fulltext-create-book" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
