@@ -195,7 +195,6 @@
 	    <f:if condition="{gp-pagegrid} == 0 and {gp-double} == 0">
 	    <li class="ocr-create ocr-page" id="tx-dlf-create-form">
 	      <f:cObject typoscriptObjectPath="plugin.tx_dlf_fulltextgeneratortool" />
-	      <!--<a onclick="document.getElementById('tx-dlf-fulltext-create-page').submit()">test</a>-->
 		<!--Create Page OCR-->
 		<f:translate key='fulltext.create_ocr_page' extensionName='dfgviewer'/>
 		<f:form style="display:none;" id="tx-dlf-fulltext-create-page" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
@@ -203,7 +202,6 @@
 		  <f:form.hidden property="type" value="page"/>
 		  <f:form.submit/>
 		</f:form>
-	      <!--<a onclick="document.getElementById('tx-dlf-fulltext-create-book').submit()">test</a>-->
 		<!--Create Book OCR-->
 		<f:translate key='fulltext.create_ocr_book' extensionName='dfgviewer'/>
 		<f:form style="display:none;" id="tx-dlf-fulltext-create-book" pageUid="{kitodoPageView}"  action="create" name="request" method="post" additionalParams="{tx_dlf:{page:'{gp-page}', id:'{gp-id}'}}" >
